@@ -1,0 +1,23 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int cnt=0;
+        for(int i=0;i<nums.length;i++){
+            int digits=countdigits(nums[i]);
+            if(even(digits)){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+    int countdigits(int arr){
+        int c=0;
+        while(arr>0){
+            c++;
+            arr=arr/10;
+        }
+        return c;
+    }
+    boolean even(int num){
+        return num%2==0;
+    }
+}
